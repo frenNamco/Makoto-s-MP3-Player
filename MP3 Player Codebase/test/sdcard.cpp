@@ -2,7 +2,7 @@
 #include <SPI.h>
 #include <SdFat.h>
 
-#define SD_CS   17
+#define SD_CS   21
 #define SCK     18
 #define MOSI    19
 #define MISO    16
