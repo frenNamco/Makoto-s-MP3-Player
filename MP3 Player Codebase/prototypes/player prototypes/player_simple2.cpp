@@ -11,29 +11,31 @@
 #define XDCS  22 // VS1053 Data/command select pin (output)
 #define SDCS  21 // Card chip select pin
 #define DREQ  26 // VS1053 Data request, ideally an Interrupt pin
+
 Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
 
 void printDirectory(File dir, int numTabs) {
    while(true) {
-     
-     File entry =  dir.openNextFile();
-     if (! entry) break;
-     for (uint8_t i = 0; i < numTabs; i++) {
-       Serial.print('\t');
-     }
-     Serial.print(entry.name());
-     if (entry.isDirectory()) {
-       Serial.println("/");
-       printDirectory(entry, numTabs+1);
-     } else {
-       Serial.print("\t\t");
-       Serial.println(entry.size(), DEC);
-     }
-     entry.close();
-   }
+
+        File entry =  dir.openNextFile();
+        if (! entry) break;
+        for (uint8_t i = 0; i < numTabs; i++) Serial.print('\t');
+
+        Serial.print(entry.name());
+        if (entry.isDirectory()) {
+            Serial.println("/");
+            printDirectory(entry, numTabs+1);
+        } else {
+            Serial.print("\t\t");
+            Serial.println(entry.size(), DEC);
+        }
+
+        entry.close();
+    }
 }
 void setup() {
   Serial.begin(9600);
+
   while (!Serial) {
     delay(1);
   }
@@ -47,8 +49,6 @@ void setup() {
   Serial.println("Adafruit VS1053 Library Test");
   if (!mp3.begin()) Serial.println("VS1053 NOT found");
 
-  mp3.sineTest(0x44, 1500); 
- 
   if (!SD.begin(SDCS)) Serial.println("SD NOT OK!");
   printDirectory(SD.open("/"), 0);
 
@@ -68,7 +68,7 @@ void setup() {
   // digitalPinToInterrupt(DREQ)
   // 5
   if (! mp3.useInterrupt(VS1053_FILEPLAYER_PIN_INT)) Serial.println("DREQ pin is not an interrupt pin");
-  mp3.setVolume(1,100);
+  mp3.setVolume(20, 20);
 }
 
 void loop() {

@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <SPI.h>
 #include <SdFat.h>
+#include <Vector.h>
 
 #define SD_CS   21
 #define SCK     18
@@ -9,11 +10,13 @@
 
 SdFs sd;
 
+Vector<char*> dirList;
+
 void listDir(const char *path, int depth) {
     SdFile file;
     SdFile dir;
     
-    if (!dir.open(path)) {
+    if (!dir.open(path))  {
         Serial.println("Failed to open directory");
     } 
 
@@ -32,11 +35,12 @@ void listDir(const char *path, int depth) {
 
 
             Serial.println(newPath);
-
-            listDir(newPath, depth + 1);
+            dirList.push_back(newPath);
+            // listDir(newPath, depth + 1);
 
         } else {
             Serial.println(name);
+            dirList.push_back(name);
         }
         
         file.close();

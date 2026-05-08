@@ -25,7 +25,7 @@
 #define CS    17 // VS1053 chip select pin (output)
 #define XDCS  14 // VS1053 Data/command select pin (output)
 #define SDCS  13 // Card chip select pin
-#define DREQ  5 // VS1053 Data request, ideally an Interrupt pin
+#define DREQ  26 // VS1053 Data request, ideally an Interrupt pin
 Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
 
 
