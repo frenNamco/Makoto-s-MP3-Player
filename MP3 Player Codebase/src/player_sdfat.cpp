@@ -2,6 +2,8 @@
 #include <SPI.h>
 #include <Adafruit_VS1053.h>
 #include <SdFat.h>
+#include <vector>
+#include <cstring>
 
 // VS1053 + SD SPI pins
 #define CLK   18
@@ -18,21 +20,32 @@
 #define R_BUTTON_PIN  14
 #define G_BUTTON_PIN  13
 #define B_BUTTON_PIN  12
+#define Y_BUTTON_PIN  11
+
+using namespace std;
 
 // SdFat object
 SdFat SD;
+char currentDir[64] = "/";
+int selectedItem = 0;
 
 // VS1053 object
-Adafruit_VS1053_FilePlayer mp3 =
-    Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
+Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
+
+const size_t MAX_NAME_SIZE = 64;
+vector<char*> currentDirList;
 
 // Recursive directory print
 void printDirectory(FsFile dir, int numTabs) {
+  int i = 0;
+
   while (true) {
     FsFile entry = dir.openNextFile();
     if (!entry) break;
 
     for (uint8_t i = 0; i < numTabs; i++) Serial.print('\t');
+
+    if (i == selectedItem) Serial.print("• ");
 
     char name[64];
     entry.getName(name, sizeof(name));
@@ -47,6 +60,23 @@ void printDirectory(FsFile dir, int numTabs) {
     }
 
     entry.close();
+    i++;
+  }
+}
+
+void populateCurrentDirList(FsFile dir) {
+  for (char* name : currentDirList) delete[] name;
+  currentDirList.clear();
+
+  while (true) {
+    FsFile entry = dir.openNextFile();
+    if (!entry) break;
+
+    char* name = new char[MAX_NAME_SIZE];
+    entry.getName(name, MAX_NAME_SIZE);
+    currentDirList.push_back(name);
+
+    entry.close();
   }
 }
 
@@ -55,6 +85,11 @@ void checkButtonPress(int &wBtnPress, int &rBtnPress, int &gBtnPress, int &bBtnP
   rBtnPress = !(digitalRead(R_BUTTON_PIN));
   gBtnPress = !(digitalRead(G_BUTTON_PIN));
   bBtnPress = !(digitalRead(B_BUTTON_PIN));
+}
+
+void selectedItemPath(char *path) {
+  strcat(path, currentDir);
+  strcat(path, currentDirList[selectedItem]);
 }
 
 void setup() {
@@ -90,9 +125,12 @@ void setup() {
 
   Serial.println("SD OK!");
 
-  FsFile root = SD.open("/");
+  FsFile root = SD.open(currentDir);
   printDirectory(root, 0);
+  populateCurrentDirList(root);
   root.close();
+
+  
 
   // Enable interrupt-driven playback
   if (!mp3.useInterrupt(VS1053_FILEPLAYER_PIN_INT)) {
@@ -111,19 +149,17 @@ bool musicStarted = false;
 bool currentTrackPaused = false;
 
 void loop() {
-  // Serial.println("Trying TRACK001.MP3");
+  char path[128];
+  selectedItemPath(path);
+  Serial.println(path);
 
-  // if (!mp3.playFullFile("/TRACK001.MP3")) {
-  //   Serial.println("Could not open TRACK001.MP3");
-  //   while (1);
-  // }
+  Serial.print("Trying ミッドナイト・ランデブー.mp3");
 
-  
-  Serial.println("Trying ミッドナイト・ランデブー.mp3");
   
   if (!musicStarted) {
-    if (!mp3.startPlayingFile("/ミッドナイト・ランデブー.mp3")) {
-      Serial.println("Could not open ミッドナイト・ランデブー.mp3");
+    if (!mp3.startPlayingFile(path)) {
+      Serial.print("Could not open ");
+      Serial.println(currentDirList[selectedItem]);
       while (1);
     } else {
       musicStarted = true;
@@ -144,22 +180,48 @@ void loop() {
 
       currentTrackPaused = !currentTrackPaused;
 
-      delay(500);
+      delay(50);
     }
 
     if (rBtnPress) {
       Serial.println("Red button press");
-      delay(500);
+      delay(50);
     }
 
     if (gBtnPress) {
       Serial.println("Green button press");
-      delay(500);
+
+      if (selectedItem >= currentDirList.size() - 1) {
+        selectedItem = 0;
+      } else {
+        selectedItem++;
+      }
+
+      Serial.println(selectedItem);
+
+      FsFile dir = SD.open(currentDir);
+      printDirectory(dir, 0);
+      dir.close();
+
+      delay(50);
     }
 
     if (bBtnPress) {
       Serial.println("Blue button press");
-      delay(500);
+
+      if (selectedItem <= 0) {
+        selectedItem = currentDirList.size() - 1;
+      } else {
+        selectedItem--;
+      }
+
+      Serial.println(selectedItem);
+
+      FsFile dir = SD.open(currentDir);
+      printDirectory(dir, 0);
+      dir.close();
+
+      delay(50);
     }
   }
 
