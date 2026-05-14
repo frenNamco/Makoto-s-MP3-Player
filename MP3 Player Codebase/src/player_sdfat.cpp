@@ -26,14 +26,16 @@ using namespace std;
 
 // SdFat object
 SdFat SD;
-char currentDir[64] = "/";
-int selectedItem = 0;
 
 // VS1053 object
 Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
 
 const size_t MAX_NAME_SIZE = 64;
 vector<char*> currentDirList;
+char currentDir[64] = "/";
+
+int playingItemIndex = 0;
+int selectedItemIndex = 0;
 
 // Recursive directory print
 void printDirectory(FsFile dir, int numTabs) {
@@ -45,7 +47,7 @@ void printDirectory(FsFile dir, int numTabs) {
 
     for (uint8_t i = 0; i < numTabs; i++) Serial.print('\t');
 
-    if (i == selectedItem) Serial.print("• ");
+    if (i == selectedItemIndex) Serial.print("• ");
 
     char name[64];
     entry.getName(name, sizeof(name));
@@ -89,7 +91,7 @@ void checkButtonPress(int &wBtnPress, int &rBtnPress, int &gBtnPress, int &bBtnP
 
 void selectedItemPath(char *path) {
   strcat(path, currentDir);
-  strcat(path, currentDirList[selectedItem]);
+  strcat(path, currentDirList[selectedItemIndex]);
 }
 
 void setup() {
@@ -137,7 +139,7 @@ void setup() {
     Serial.println("DREQ pin is not interrupt capable");
   }
 
-  mp3.setVolume(20, 20);
+  mp3.setVolume(75, 75);
 }
 
 int wBtnPress = 0;
@@ -145,83 +147,115 @@ int rBtnPress = 0;
 int gBtnPress = 0;
 int bBtnPress = 0;
 
-bool musicStarted = false;
-bool currentTrackPaused = false;
-
 void loop() {
-  char path[128];
-  selectedItemPath(path);
-  Serial.println(path);
-
-  Serial.print("Trying ミッドナイト・ランデブー.mp3");
-
-  
-  if (!musicStarted) {
-    if (!mp3.startPlayingFile(path)) {
-      Serial.print("Could not open ");
-      Serial.println(currentDirList[selectedItem]);
-      while (1);
-    } else {
-      musicStarted = true;
-      currentTrackPaused = false;
-    }
-  }
-  
-  Serial.println("Started playing");
-  
-  while (mp3.playingMusic || musicStarted) {
+  while(mp3.stopped() && !(mp3.paused())) {
     checkButtonPress(wBtnPress, rBtnPress, gBtnPress, bBtnPress);
 
-    // Pause button func
-    if (wBtnPress) {
+    if (wBtnPress) { // Pause button func
       Serial.println("White button press");
-
-      mp3.pausePlaying(!currentTrackPaused);
-
-      currentTrackPaused = !currentTrackPaused;
-
-      delay(50);
-    }
-
-    if (rBtnPress) {
+      delay(250);
+    } else if (rBtnPress) {
       Serial.println("Red button press");
-      delay(50);
-    }
+      char path[128] = "";
+      selectedItemPath(path);
+      if (!mp3.startPlayingFile(path)) {
+        Serial.print("Could not open ");
+        Serial.println(path);
+        while (1);
+      }
 
-    if (gBtnPress) {
+      delay(250);
+    } else if (gBtnPress) { // Goes down the list of items
       Serial.println("Green button press");
 
-      if (selectedItem >= currentDirList.size() - 1) {
-        selectedItem = 0;
+      if (selectedItemIndex >= currentDirList.size() - 1) {
+        selectedItemIndex = 0;
       } else {
-        selectedItem++;
+        selectedItemIndex++;
       }
 
-      Serial.println(selectedItem);
+      Serial.println(selectedItemIndex);
 
       FsFile dir = SD.open(currentDir);
       printDirectory(dir, 0);
       dir.close();
 
-      delay(50);
-    }
-
-    if (bBtnPress) {
+      delay(250);
+    } else if (bBtnPress) { // Goes up the list of items
       Serial.println("Blue button press");
 
-      if (selectedItem <= 0) {
-        selectedItem = currentDirList.size() - 1;
+      if (selectedItemIndex <= 0) {
+        selectedItemIndex = currentDirList.size() - 1;
       } else {
-        selectedItem--;
+        selectedItemIndex--;
       }
 
-      Serial.println(selectedItem);
+      Serial.println(selectedItemIndex);
 
       FsFile dir = SD.open(currentDir);
       printDirectory(dir, 0);
       dir.close();
 
-      delay(50);
+      delay(250);
+    }
+
+
+  }
+
+  
+  while (mp3.playingMusic || mp3.paused()) {
+    checkButtonPress(wBtnPress, rBtnPress, gBtnPress, bBtnPress);
+
+    
+    if (wBtnPress) { // Pause button func
+      Serial.println("White button press");
+      mp3.pausePlaying(!mp3.paused());
+      delay(250);
+    } else if (rBtnPress) {
+      Serial.println("Red button press");
+
+      mp3.stopPlaying();
+      delay(1000);
+      char path[128] = "";
+      selectedItemPath(path);
+      if (!mp3.startPlayingFile(path)) {
+        Serial.print("Could not open ");
+        Serial.println(path);
+        while (1);
+      }
+      delay(250);
+    } else if (gBtnPress) { // Goes down the list of items
+      Serial.println("Green button press");
+
+      if (selectedItemIndex >= currentDirList.size() - 1) {
+        selectedItemIndex = 0;
+      } else {
+        selectedItemIndex++;
+      }
+
+      Serial.println(selectedItemIndex);
+
+      FsFile dir = SD.open(currentDir);
+      printDirectory(dir, 0);
+      dir.close();
+
+      delay(250);
+    } else if (bBtnPress) { // Goes up the list of items
+      Serial.println("Blue button press");
+
+      if (selectedItemIndex <= 0) {
+        selectedItemIndex = currentDirList.size() - 1;
+      } else {
+        selectedItemIndex--;
+      }
+
+      Serial.println(selectedItemIndex);
+
+      FsFile dir = SD.open(currentDir);
+      printDirectory(dir, 0);
+      dir.close();
+
+      delay(250);
     }
   }
 
