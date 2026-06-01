@@ -26,11 +26,11 @@ void setup() {
 void loop() {
   while(player.mp3.stopped() && !(player.mp3.paused())) {
 
-    if (player.checkWhiteButtonPress()) { // Pause button func
+    if (player.checkButtonPress(W_BUTTON_PIN)) { // Pause button func
       Serial.println("White button press");
-      delay(250);
+      
 
-    } else if (player.checkRedButtonPress()) {
+    } else if (player.checkButtonPress(R_BUTTON_PIN)) {
       Serial.println("Red button press");
       char path[128] = "";
       player.selectedItemPath(path);
@@ -40,8 +40,8 @@ void loop() {
         while (1);
       }
 
-      delay(250);
-    } else if (player.checkGreenButtonPress()) { // Goes down the list of items
+      
+    } else if (player.checkButtonPress(G_BUTTON_PIN)) { // Goes down the list of items
       Serial.println("Green button press");
 
       if (player.selectedItemIndex >= player.currentDirList.size() - 1) {
@@ -53,8 +53,8 @@ void loop() {
       Serial.println(player.selectedItemIndex);
       player.printCurrentDirectory();
 
-      delay(250);
-    } else if (player.checkBlueButtonPress()) { // Goes up the list of items
+      
+    } else if (player.checkButtonPress(B_BUTTON_PIN)) { // Goes up the list of items
       Serial.println("Blue button press");
 
       if (player.selectedItemIndex <= 0) {
@@ -66,20 +66,29 @@ void loop() {
       Serial.println(player.selectedItemIndex);
       player.printCurrentDirectory();
 
-      delay(250);
-    }
+      
+    } else if (player.checkButtonPress(Y1_BUTTON_PIN)) {
+      Serial.println("Yellow button 1 press");
+      player.increaseVolume();
 
+      
+    } else if (player.checkButtonPress(Y2_BUTTON_PIN)) {
+      Serial.println("Yellow button 2 press");
+      player.decreaseVolume();
+
+      
+    } 
 
   }
 
   
   while (player.mp3.playingMusic || player.mp3.paused()) {
     
-    if (player.checkWhiteButtonPress()) { // Pause button func
+    if (player.checkButtonPress(W_BUTTON_PIN)) { // Pause button func
       Serial.println("White button press");
       player.mp3.pausePlaying(!player.mp3.paused());
-      delay(250);
-    } else if (player.checkRedButtonPress()) {
+      
+    } else if (player.checkButtonPress(R_BUTTON_PIN)) {
       Serial.println("Red button press");
 
       player.mp3.stopPlaying();
@@ -91,8 +100,8 @@ void loop() {
         Serial.println(path);
         while (1);
       }
-      delay(250);
-    } else if (player.checkGreenButtonPress()) { // Goes down the list of items
+      
+    } else if (player.checkButtonPress(G_BUTTON_PIN)) { // Goes down the list of items
       Serial.println("Green button press");
 
       if (player.selectedItemIndex >= player.currentDirList.size() - 1) {
@@ -106,8 +115,8 @@ void loop() {
 
       
 
-      delay(250);
-    } else if (player.checkBlueButtonPress()) { // Goes up the list of items
+      
+    } else if (player.checkButtonPress(B_BUTTON_PIN)) { // Goes up the list of items
       Serial.println("Blue button press");
 
       if (player.selectedItemIndex <= 0) {
@@ -120,8 +129,18 @@ void loop() {
       player.printCurrentDirectory();
 
 
-      delay(250);
-    }
+      
+    } else if (player.checkButtonPress(Y1_BUTTON_PIN)) {
+      Serial.println("Yellow button 1 press");
+      player.increaseVolume();
+
+      
+    } else if (player.checkButtonPress(Y2_BUTTON_PIN)) {
+      Serial.println("Yellow button 2 press");
+      player.decreaseVolume();
+
+      
+    } 
   }
 
   Serial.println("\nDone playing music");
