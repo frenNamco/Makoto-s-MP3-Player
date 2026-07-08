@@ -7,7 +7,7 @@ MusicPlayer player;
 
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   while (!Serial) delay(1);
   delay(1000);
 
@@ -20,6 +20,13 @@ void setup() {
 
   player.printCurrentDirectory();
   player.populateCurrentDirList();
+
+  FsFile root = SD.open("/"); 
+  player.addFoldertoJSON(root, "");
+  root.close();
+
+  player.saveJSON();
+  player.testJSON();
 }
 
 

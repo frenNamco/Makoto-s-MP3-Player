@@ -5,6 +5,9 @@
 #include <vector>
 #include <unordered_map>
 #include <cstring>
+#include <cstdio>
+#include <LittleFS.h>
+#include <ArduinoJson.h>
 
 using namespace std;
 
@@ -33,8 +36,8 @@ extern SdFat SD;
 class MusicPlayer {
     private:
     
-    const size_t MAX_NAME_SIZE = 64;
-    char currentDir[64] = "/";
+    static constexpr size_t MAX_NAME_SIZE = 64;
+    char currentDir[MAX_NAME_SIZE] = "/";
     
     int wBtnPress, rBtnPress, gBtnPress, bBtnPress, y1BtnPress, y2BtnPress;
 
@@ -44,6 +47,9 @@ class MusicPlayer {
     unordered_map<int, unsigned long> previousSwitchTime;
     unordered_map<int, int> currentButtonState;
     const unsigned long delay = 100;
+
+    JsonDocument doc;
+    JsonArray folders = doc["folders"].to<JsonArray>();
     
     public:
     Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
@@ -92,6 +98,12 @@ class MusicPlayer {
         if (!SD.begin(SDCS)) {
             Serial.println("SD Error");
             return false;
+        }
+
+        if(!LittleFS.begin()) {
+            Serial.println("Mounting failure; formatting");
+            LittleFS.format();
+            LittleFS.begin();
         }
         
         if (!mp3.useInterrupt(VS1053_FILEPLAYER_PIN_INT)) {
@@ -142,6 +154,75 @@ class MusicPlayer {
         }
 
         dir.close();
+    }
+
+    void addFoldertoJSON(FsFile dir, const char* parentDir) {
+        // Create a folder JSON object for the current director and add it to the folders array
+        JsonObject folder = folders.add<JsonObject>();  
+
+        // Get the name of the current directory, concat "/" at the end, and add it to the folder object as its name
+        char directoryName[MAX_NAME_SIZE];
+        dir.getName(directoryName, sizeof(directoryName));
+        snprintf(directoryName, sizeof(directoryName), "%s%s", directoryName, "/");
+        folder["name"] = String(directoryName);
+
+        // Add the parent directory for the folder
+        folder["parent_dir"] = String(parentDir);
+
+        // Add an array called items to store the items of the current directory
+        JsonArray items = folder["items"].to<JsonArray>();
+
+        // Loop that goes through all items of the current directory
+        while (true) {
+            // Open an item in the current directory and break if there are no more items
+            FsFile item = dir.openNextFile();
+            if (!item) break;
+
+            // Get its name
+            char name[MAX_NAME_SIZE];
+            item.getName(name, sizeof(name));
+
+            // If an item is a directory, concat "/" at the end and add it as a folder to the folders array
+            if (item.isDir()) {
+                snprintf(name, sizeof(name), "%s%s", name, "/");
+                addFoldertoJSON(item, directoryName);
+            }
+
+            // Add the name of the item to the array
+            items.add(name);
+
+            item.close();
+        }
+
+    }
+
+    void saveJSON() {
+        File pathsJSONFile = LittleFS.open("/paths.json", "w");
+        if (!pathsJSONFile) return;
+        serializeJson(doc, pathsJSONFile);
+        pathsJSONFile.close();
+        doc.clear();
+        folders = doc["folders"].to<JsonArray>();
+    }
+
+    void testJSON() {
+        File pathsJSONFile = LittleFS.open("/paths.json", "r");
+
+        if (!pathsJSONFile) {
+            Serial.println("failed to open file");
+            return;
+        }
+
+        DeserializationError err = deserializeJson(doc, pathsJSONFile);
+        pathsJSONFile.close();
+
+        if (err) {
+            Serial.print("Parse failed: ");
+            Serial.println(err.c_str());
+        }
+
+        serializeJsonPretty(doc, Serial);
+        Serial.println();
     }
 
     bool checkButtonPress(int buttonPin) {
