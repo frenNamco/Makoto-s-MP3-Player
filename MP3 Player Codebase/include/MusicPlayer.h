@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Arduino.h>
 #include <SPI.h>
 #include <Adafruit_VS1053.h>
@@ -48,12 +50,12 @@ class MusicPlayer {
     unordered_map<int, int> currentButtonState;
     const unsigned long delay = 100;
 
-    JsonDocument doc;
-    JsonArray folders = doc["folders"].to<JsonArray>();
+    JsonDocument foldersDoc;
+    String foldersFilePath = "/folders.json";
     
     public:
     Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
-    vector<char*> currentDirList;
+    vector<const char*> currentDirList;
     int playingItemIndex = 0;
     int selectedItemIndex = 0;
 
@@ -115,116 +117,15 @@ class MusicPlayer {
         return true;
     }
 
-    void printCurrentDirectory() {
-        FsFile dir = SD.open(currentDir);
+    void printCurrentDirectory();
+    void populateCurrentDirList();
 
-        int i = 0;
-        while(true) {
-            FsFile entry = dir.openNextFile();
-            if (!entry) break;
+    void addFoldertoJSON(FsFile dir, const char* parentDir);
+    void saveJSON();
+    void testJSON();
 
-            if (i == selectedItemIndex) Serial.print("• ");
-
-            char name[MAX_NAME_SIZE];
-            entry.getName(name, MAX_NAME_SIZE);
-            Serial.println(name);
-
-            entry.close();
-            i++;
-        }
-
-        dir.close();
-    }
-
-    void populateCurrentDirList() {
-        for (char* name : currentDirList) delete[] name;
-        currentDirList.clear();
-
-        FsFile dir = SD.open(currentDir);
-
-        while(true) {
-            FsFile entry = dir.openNextFile();
-            if (!entry) break;
-
-            char* name = new char[MAX_NAME_SIZE];
-            entry.getName(name, MAX_NAME_SIZE);
-            currentDirList.push_back(name);
-
-            entry.close();
-        }
-
-        dir.close();
-    }
-
-    void addFoldertoJSON(FsFile dir, const char* parentDir) {
-        // Create a folder JSON object for the current director and add it to the folders array
-        JsonObject folder = folders.add<JsonObject>();  
-
-        // Get the name of the current directory, concat "/" at the end, and add it to the folder object as its name
-        char directoryName[MAX_NAME_SIZE];
-        dir.getName(directoryName, sizeof(directoryName));
-        snprintf(directoryName, sizeof(directoryName), "%s%s", directoryName, "/");
-        folder["name"] = String(directoryName);
-
-        // Add the parent directory for the folder
-        folder["parent_dir"] = String(parentDir);
-
-        // Add an array called items to store the items of the current directory
-        JsonArray items = folder["items"].to<JsonArray>();
-
-        // Loop that goes through all items of the current directory
-        while (true) {
-            // Open an item in the current directory and break if there are no more items
-            FsFile item = dir.openNextFile();
-            if (!item) break;
-
-            // Get its name
-            char name[MAX_NAME_SIZE];
-            item.getName(name, sizeof(name));
-
-            // If an item is a directory, concat "/" at the end and add it as a folder to the folders array
-            if (item.isDir()) {
-                snprintf(name, sizeof(name), "%s%s", name, "/");
-                addFoldertoJSON(item, directoryName);
-            }
-
-            // Add the name of the item to the array
-            items.add(name);
-
-            item.close();
-        }
-
-    }
-
-    void saveJSON() {
-        File pathsJSONFile = LittleFS.open("/paths.json", "w");
-        if (!pathsJSONFile) return;
-        serializeJson(doc, pathsJSONFile);
-        pathsJSONFile.close();
-        doc.clear();
-        folders = doc["folders"].to<JsonArray>();
-    }
-
-    void testJSON() {
-        File pathsJSONFile = LittleFS.open("/paths.json", "r");
-
-        if (!pathsJSONFile) {
-            Serial.println("failed to open file");
-            return;
-        }
-
-        DeserializationError err = deserializeJson(doc, pathsJSONFile);
-        pathsJSONFile.close();
-
-        if (err) {
-            Serial.print("Parse failed: ");
-            Serial.println(err.c_str());
-        }
-
-        serializeJsonPretty(doc, Serial);
-        Serial.println();
-    }
-
+    
+    //TODO: Move these function definitions over to their own file
     bool checkButtonPress(int buttonPin) {
         int reading = !(digitalRead(buttonPin)); // Get reading from digital pin
         
@@ -246,6 +147,7 @@ class MusicPlayer {
         return false;
     }
 
+    //TODO: Confirm that you don't need to keep these anymore to get rid of them
     // bool checkWhiteButtonPress() {
     //     wBtnPress = !(digitalRead(W_BUTTON_PIN));
     // 
@@ -282,11 +184,14 @@ class MusicPlayer {
     //     return y2BtnPress;
     // }
 
+
+    //TODO: Needs different implementation to go with new JSON layout
     void selectedItemPath(char *path) {
         strcat(path, currentDir);
         strcat(path, currentDirList[selectedItemIndex]);
     }
 
+    //TODO Move these to their own file
     void decreaseVolume() {
         currentVolume += volumeChange;
         
