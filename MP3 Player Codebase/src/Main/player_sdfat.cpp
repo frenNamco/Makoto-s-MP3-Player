@@ -32,7 +32,9 @@ void setup() {
 
 void loop() {
   //TODO: Still too many lines of code
+  
   while(player.isWaitingForMusic) {
+    player.updateStatus();
 
     if (player.checkButtonPress(W_BUTTON_PIN)) { // Pause button func
       Serial.println("White button press");
@@ -65,7 +67,7 @@ void loop() {
 
   
   while (player.isPlayingMusic) {
-    
+    player.updateStatus();
     if (player.checkButtonPress(W_BUTTON_PIN)) { // Pause button func
       Serial.println("White button press");
       player.playAndPause();
