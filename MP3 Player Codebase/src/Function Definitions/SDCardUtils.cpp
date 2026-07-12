@@ -1,28 +1,16 @@
 #include <MusicPlayer.h>
 
+//TODO: Test that these functions work
 //TODO: Remove the usage of the SD card to print these
 void MusicPlayer::printCurrentDirectory() {
-    FsFile dir = SD.open(currentDir);
-
-    int i = 0;
-    while(true) {
-        FsFile entry = dir.openNextFile();
-        if (!entry) break;
-
+    for (int i = 0; i < currentDirList.size(); i++) {
         if (i == selectedItemIndex) Serial.print("• ");
 
-        char name[MAX_NAME_SIZE];
-        entry.getName(name, MAX_NAME_SIZE);
-        Serial.println(name);
-
-        entry.close();
-        i++;
+        Serial.println(currentDirList[i]);
     }
-
-    dir.close();
 }
 
-//TODO: Use this to populate the dir list vector from the JSON file
+//TODO: Confirm this works with other folders
 void MusicPlayer::populateCurrentDirList() {
     for (const char* name : currentDirList) delete[] name;
     currentDirList.clear();
@@ -31,9 +19,12 @@ void MusicPlayer::populateCurrentDirList() {
     filter[String(currentDir)] = true;
 
     File foldersFile = LittleFS.open(foldersFilePath, "r");
-    foldersDoc;
     DeserializationError err = deserializeJson(foldersDoc, foldersFile);
     foldersFile.close();
+
+    parentDir = foldersDoc[String(currentDir)]["parent_dir"].as<const char*>();
+    
+    if (strcmp(parentDir, "") != 0) currentDirList.push_back("../");
 
     JsonArray items = foldersDoc[String(currentDir)]["items"];
 
@@ -41,6 +32,16 @@ void MusicPlayer::populateCurrentDirList() {
         currentDirList.push_back(item.as<const char *>());
     }
 
+    formatCurrentDirList();
+
+    foldersDoc.clear();
+}
+
+void MusicPlayer::formatCurrentDirList() {
+    stable_partition(currentDirList.begin(), currentDirList.end(), [](const char* a) {
+        size_t len = strlen(a);
+        return len > 0 && a[len - 1] == '/';
+    }); 
 }
 
 void MusicPlayer::addFoldertoJSON(FsFile dir, const char* parentDir) { 

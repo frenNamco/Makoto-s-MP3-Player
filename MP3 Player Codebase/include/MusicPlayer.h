@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <cstring>
 #include <cstdio>
+#include <algorithm>
 #include <LittleFS.h>
 #include <ArduinoJson.h>
 
@@ -26,6 +27,7 @@ using namespace std;
 #define SDCS  21
 #define DREQ  26
 
+//TODO: Change pin names to their func not color
 #define W_BUTTON_PIN    15
 #define R_BUTTON_PIN    14
 #define G_BUTTON_PIN    13
@@ -40,25 +42,26 @@ class MusicPlayer {
     
     static constexpr size_t MAX_NAME_SIZE = 64;
     char currentDir[MAX_NAME_SIZE] = "/";
+    const char* parentDir = "";
+    JsonDocument foldersDoc;
+    String foldersFilePath = "/folders.json";
     
     int wBtnPress, rBtnPress, gBtnPress, bBtnPress, y1BtnPress, y2BtnPress;
-
+    
     int currentVolume = 75;
     int volumeChange = 5;
-
+    
     unordered_map<int, unsigned long> previousSwitchTime;
     unordered_map<int, int> currentButtonState;
     const unsigned long delay = 100;
-
-    JsonDocument foldersDoc;
-    String foldersFilePath = "/folders.json";
+    
     
     public:
     Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
     vector<const char*> currentDirList;
     int playingItemIndex = 0;
     int selectedItemIndex = 0;
-
+    
 
     MusicPlayer() {};
 
@@ -117,8 +120,9 @@ class MusicPlayer {
         return true;
     }
 
-    void printCurrentDirectory();
     void populateCurrentDirList();
+    void formatCurrentDirList();
+    void printCurrentDirectory();
 
     void addFoldertoJSON(FsFile dir, const char* parentDir);
     void saveJSON();
@@ -146,43 +150,6 @@ class MusicPlayer {
 
         return false;
     }
-
-    //TODO: Confirm that you don't need to keep these anymore to get rid of them
-    // bool checkWhiteButtonPress() {
-    //     wBtnPress = !(digitalRead(W_BUTTON_PIN));
-    // 
-    //     return wBtnPress;
-    // }
-    //
-    // bool checkRedButtonPress() {
-    //     rBtnPress = !(digitalRead(R_BUTTON_PIN));
-    //
-    //     return rBtnPress;
-    // }
-    //
-    // bool checkGreenButtonPress() {
-    //     gBtnPress = !(digitalRead(G_BUTTON_PIN));
-    //
-    //     return gBtnPress;
-    // }
-    //
-    // bool checkBlueButtonPress() {
-    //     bBtnPress = !(digitalRead(B_BUTTON_PIN));
-    //
-    //     return bBtnPress;
-    // }
-    //
-    // bool checkYel1ButtonPress() {
-    //     y1BtnPress = !(digitalRead(Y1_BUTTON_PIN));
-    //
-    //     return y1BtnPress;
-    // }
-    //
-    // bool checkYel2ButtonPress() {
-    //     y2BtnPress = !(digitalRead(Y2_BUTTON_PIN));
-    //
-    //     return y2BtnPress;
-    // }
 
 
     //TODO: Needs different implementation to go with new JSON layout

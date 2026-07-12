@@ -18,19 +18,20 @@ void setup() {
     while(1);
   }
 
-  player.printCurrentDirectory();
-  player.populateCurrentDirList();
-
   FsFile root = SD.open("/"); 
   player.addFoldertoJSON(root, "");
   root.close();
 
   player.saveJSON();
   player.testJSON();
+
+  player.populateCurrentDirList();
+  player.printCurrentDirectory();
 }
 
 
 void loop() {
+  //TODO: Reformat this whole fucking thing I don't like it
   while(player.mp3.stopped() && !(player.mp3.paused())) {
 
     if (player.checkButtonPress(W_BUTTON_PIN)) { // Pause button func
