@@ -55,9 +55,16 @@ bool MusicPlayer::setup() {
     return true;
 }
 
-void MusicPlayer::updateStatus() {
-    isWaitingForMusic = mp3.stopped() && !(mp3.paused());
-    isPlayingMusic = mp3.playingMusic || mp3.paused();
+void MusicPlayer::updateState() {
+    if (mp3.stopped() && !(mp3.paused())) {
+        currentState = MusicPlayer::State::IDLE;
+    } else if (mp3.playingMusic || mp3.paused()) {
+        currentState = MusicPlayer::State::PLAYING;
+    }
+}
+
+void MusicPlayer::changeState(State newState) {
+    currentState = newState;
 }
 
 void MusicPlayer::playAndPause() {
@@ -121,4 +128,36 @@ void MusicPlayer::decreaseVolume() {
     Serial.printf("Current volume: %d", currentVolume);
     Serial.println("");
     mp3.setVolume(currentVolume, currentVolume);
+}
+
+void MusicPlayer::runPlayerFunc() {
+    updateState();
+
+    if (checkButtonPress(W_BUTTON_PIN)) {
+        Serial.println("White button press");
+        if (currentState == State::PLAYING) playAndPause();
+
+    } else if (checkButtonPress(R_BUTTON_PIN)) {
+        Serial.println("Red button press");
+        if (currentState == State::PLAYING) {
+            endSong();
+            delay(1000);
+
+        }
+
+        playSong();
+
+    } else if (checkButtonPress(G_BUTTON_PIN)) {
+        Serial.println("Green button press");
+        goDownDirList();
+    } else if (checkButtonPress(B_BUTTON_PIN)) {
+        Serial.println("Blue button press");
+        goUpDirList();
+    } else if (checkButtonPress(Y1_BUTTON_PIN)) {
+        Serial.println("Yellow button 1 press");
+        increaseVolume();
+    } else if (checkButtonPress(Y2_BUTTON_PIN)) {
+        Serial.println("Yellow button 2 press");
+        decreaseVolume();
+    }
 }

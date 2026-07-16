@@ -42,7 +42,7 @@ class MusicPlayer {
 
     Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
 
-    static constexpr size_t MAX_NAME_SIZE = 64;
+    static constexpr size_t MAX_NAME_SIZE = 128;
     char currentDir[MAX_NAME_SIZE] = "/";
     const char* parentDir = "";
     JsonDocument foldersDoc;
@@ -55,15 +55,20 @@ class MusicPlayer {
     
     unordered_map<int, unsigned long> previousSwitchTime;
     unordered_map<int, int> currentButtonState;
-    const unsigned long delay = 100;
+    const unsigned long debounceDelay = 100;
     
     public:
     
     vector<const char*> currentDirList;
-    bool isWaitingForMusic = true;
-    bool isPlayingMusic = false;
 
-    //TODO: Instead of checking indices compare paths to confirm if you're playing or pausing
+    enum class State {
+        IDLE,
+        PLAYING
+    };
+
+    State currentState = State::IDLE;
+
+    //TODO: Instead of checking indices compare paths to confirm if you're playing a song or pausing the current one
     int playingItemIndex = 0;
     int selectedItemIndex = 0;
     const char* selectedItemPath = "";
@@ -71,7 +76,8 @@ class MusicPlayer {
     MusicPlayer() {};
 
     bool setup();
-    void updateStatus();
+    void updateState(); //TODO: Figure out if you can remove it
+    void changeState(State newState);
 
     void populateCurrentDirList();
     void formatCurrentDirList();
@@ -85,6 +91,7 @@ class MusicPlayer {
 
     
     bool checkButtonPress(int buttonPin);
+    void runPlayerFunc(); //TODO: Change that fucking name
 
 
     //TODO: Needs different implementation to go with new JSON layout

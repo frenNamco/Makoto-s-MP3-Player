@@ -7,7 +7,7 @@ bool MusicPlayer::checkButtonPress(int buttonPin) {
     
     // get the current time and check if the button switched after a delay has passed
     unsigned long currentTime = millis();
-    if (currentTime - previousSwitchTime[buttonPin] >= delay) {    
+    if (currentTime - previousSwitchTime[buttonPin] >= debounceDelay) {    
         // check if the button has switched states    
         if (reading != currentButtonState[buttonPin]) {
             currentButtonState[buttonPin] = reading; // save the reading as the current button state
@@ -22,4 +22,6 @@ bool MusicPlayer::checkButtonPress(int buttonPin) {
 
     return false;
 }
+
+
 

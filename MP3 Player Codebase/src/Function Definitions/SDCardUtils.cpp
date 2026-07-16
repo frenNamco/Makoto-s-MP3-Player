@@ -44,23 +44,26 @@ void MusicPlayer::formatCurrentDirList() {
     }); 
 }
 
-void MusicPlayer::addFoldertoJSON(FsFile dir, const char* parentDir) { 
-    // Get the name of the current directory, concat "/" at the end
+void MusicPlayer::addFoldertoJSON(FsFile folder, const char* parentDir) { 
+    // Get the name of a folder
     char directoryName[MAX_NAME_SIZE];
-    dir.getName(directoryName, sizeof(directoryName));
-    snprintf(directoryName, sizeof(directoryName), "%s%s", directoryName, "/");
+    folder.getName(directoryName, sizeof(directoryName));
+    
+    // Get the full path to that folder by concatenating its parent, the name, and a "/"
+    char fullPath[MAX_NAME_SIZE];
+    snprintf(fullPath, sizeof(directoryName), "%s%s%s", parentDir, directoryName, "/");
 
-    // Make a nested object with the first key being the directory name and the second key being "parent_dir"
+    // Make a nested object with the first key being the path and the second key being parent
     // to keep the parent directory of the folder (empty string for root)
-    foldersDoc[String(directoryName)]["parent_dir"] = String(parentDir); 
+    foldersDoc[String(fullPath)]["parent_dir"] = String(parentDir); 
 
-    // Add an array called items to store the items of the current directory
-    JsonArray items = foldersDoc[String(directoryName)]["items"].to<JsonArray>();
+    // Add an array called items to store the items of the folder
+    JsonArray items = foldersDoc[String(fullPath)]["items"].to<JsonArray>();
 
-    // Loop that goes through all items of the current directory
+    // Loop that goes through all items of the folder
     while (true) {
         // Open an item in the current directory and break if there are no more items
-        FsFile item = dir.openNextFile();
+        FsFile item = folder.openNextFile();
         if (!item) break;
 
         // Get its name
@@ -70,7 +73,7 @@ void MusicPlayer::addFoldertoJSON(FsFile dir, const char* parentDir) {
         // If an item is a directory, concat "/" at the end and add it as a folder to the folders array
         if (item.isDir()) {
             snprintf(name, sizeof(name), "%s%s", name, "/");
-            addFoldertoJSON(item, directoryName);
+            addFoldertoJSON(item, fullPath);
         }
 
         // Add the name of the item to the array
@@ -90,7 +93,7 @@ void MusicPlayer::saveJSON() {
 }
 
 void MusicPlayer::testJSON() {
-    File pathsJSONFile = LittleFS.open("/paths.json", "r");
+    File pathsJSONFile = LittleFS.open(foldersFilePath, "r");
 
     if (!pathsJSONFile) {
         Serial.println("failed to open file");
