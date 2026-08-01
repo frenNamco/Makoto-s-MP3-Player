@@ -9,6 +9,7 @@
 #include <cstring>
 #include <cstdio>
 #include <algorithm>
+#include <memory>
 #include <LittleFS.h>
 #include <ArduinoJson.h>
 
@@ -26,6 +27,7 @@ using namespace std;
 #define XDCS  22
 #define SDCS  21
 #define DREQ  26
+#define SDCD  27
 
 //TODO: Change pin names to their func not color
 #define W_BUTTON_PIN    15
@@ -42,7 +44,7 @@ class MusicPlayer {
 
     Adafruit_VS1053_FilePlayer mp3 = Adafruit_VS1053_FilePlayer(RST, CS, XDCS, DREQ, SDCS);
 
-    static constexpr size_t MAX_NAME_SIZE = 128;
+    static constexpr size_t MAX_NAME_SIZE = 500;
     char currentDir[MAX_NAME_SIZE] = "/";
     const char* parentDir = "";
     JsonDocument foldersDoc;
@@ -82,6 +84,8 @@ class MusicPlayer {
     void populateCurrentDirList();
     void formatCurrentDirList();
     void printCurrentDirectory();
+    void setNewCurrentDirectory(const char* folder);
+    bool isDirectory(const char* item);
 
     void addFoldertoJSON(FsFile dir, const char* parentDir);
     void saveJSON();

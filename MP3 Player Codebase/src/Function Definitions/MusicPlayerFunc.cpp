@@ -135,17 +135,23 @@ void MusicPlayer::runPlayerFunc() {
 
     if (checkButtonPress(W_BUTTON_PIN)) {
         Serial.println("White button press");
+
         if (currentState == State::PLAYING) playAndPause();
 
     } else if (checkButtonPress(R_BUTTON_PIN)) {
         Serial.println("Red button press");
-        if (currentState == State::PLAYING) {
-            endSong();
-            delay(1000);
+        if (isDirectory(currentDirList[selectedItemIndex])) {
+            setNewCurrentDirectory(currentDirList[selectedItemIndex]);
+        } else {
+            if (currentState == State::PLAYING) {
+                endSong();
+                delay(1000);
 
+            }
+
+            Serial.println("Playing Song");
+            playSong();
         }
-
-        playSong();
 
     } else if (checkButtonPress(G_BUTTON_PIN)) {
         Serial.println("Green button press");

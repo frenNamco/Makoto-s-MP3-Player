@@ -1,16 +1,17 @@
 #include <Arduino.h>
 #include <SPI.h>
 #include <SdFat.h>
-#include <Vector.h>
+#include <vector>
 
 #define SD_CS   21
 #define SCK     18
 #define MOSI    19
 #define MISO    16
+#define SDCD    27
 
 SdFs sd;
 
-Vector<char*> dirList;
+std::vector<char*> dirList;
 
 void listDir(const char *path, int depth) {
     SdFile file;
@@ -50,12 +51,15 @@ void listDir(const char *path, int depth) {
 
 void setup() {
     Serial.begin(115200);
-    delay(2500);
+    while (!Serial) delay(1); 
+    delay(1000);
 
     SPI.setRX(MISO);
     SPI.setTX(MOSI);
     SPI.setSCK(SCK);
     SPI.begin();
+
+    pinMode(SDCD, INPUT_PULLUP);
 
     if (!sd.begin(SD_CS,SD_SCK_MHZ(4))) {
         sd.initErrorPrint(&Serial);
@@ -64,6 +68,16 @@ void setup() {
     }
     
     Serial.println("SD Init Success");
+    delay(5000);
+    Serial.println(digitalRead(SDCD));
+
+    if (!digitalRead(SDCD)) {
+        Serial.println("SD Card detected");
+    } else {
+        Serial.println("SD Card removed");   
+    }
+
+    //
 
     // int sdClockSpeed = 50;
     // bool sdInit = sd.begin(SD_CS,SD_SCK_MHZ(sdClockSpeed));

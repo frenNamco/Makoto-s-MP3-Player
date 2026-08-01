@@ -1,5 +1,7 @@
 #include <MusicPlayer.h>
 
+
+
 //TODO: Test that these functions work
 //TODO: Remove the usage of the SD card to print these
 void MusicPlayer::printCurrentDirectory() {
@@ -10,12 +12,21 @@ void MusicPlayer::printCurrentDirectory() {
     }
 }
 
+static char* deepCopyStr(const char* str) {
+    if (str == nullptr) str = "";
+    char* copy =  new char[strlen(str) + 1];
+    strcpy(copy, str);
+
+    return copy;
+}
+
 //TODO: Confirm this works with other folders
 void MusicPlayer::populateCurrentDirList() {
     for (const char* name : currentDirList) delete[] name;
     currentDirList.clear();
 
     JsonDocument filter;
+    Serial.println(String(currentDir));
     filter[String(currentDir)] = true;
 
     File foldersFile = LittleFS.open(foldersFilePath, "r");
@@ -24,12 +35,15 @@ void MusicPlayer::populateCurrentDirList() {
 
     parentDir = foldersDoc[String(currentDir)]["parent_dir"].as<const char*>();
     
-    if (strcmp(parentDir, "") != 0) currentDirList.push_back("../");
+    if (strcmp(parentDir, "") != 0) currentDirList.push_back(deepCopyStr("../"));
 
     JsonArray items = foldersDoc[String(currentDir)]["items"];
 
     for (JsonVariant item: items) {
-        currentDirList.push_back(item.as<const char *>());
+        // const char* newItem = item.as<const char*>();
+        // char* copy = new char[strlen(newItem) + 1];
+        // strcpy(copy, newItem);
+        currentDirList.push_back(deepCopyStr(item.as<const char*>()));
     }
 
     formatCurrentDirList();
@@ -110,5 +124,30 @@ void MusicPlayer::testJSON() {
 
     serializeJsonPretty(foldersDoc, Serial);
     Serial.println();
+}
+
+void MusicPlayer::setNewCurrentDirectory(const char* folder) {
+    char newCurrentDir[MAX_NAME_SIZE];
+    snprintf(newCurrentDir, sizeof(newCurrentDir), "%s%s", currentDir, folder);
+    Serial.print("Current dir:");
+    Serial.println(currentDir);
+    Serial.print("Directory to be made current:");
+    Serial.println(newCurrentDir);
+
+    strlcpy(currentDir, newCurrentDir, MAX_NAME_SIZE);
+    // currentDir[MAX_NAME_SIZE - 1] = '\0';
+
+    Serial.print("New Current Directory:");
+    Serial.println(currentDir);
+    populateCurrentDirList();
+    printCurrentDirectory();
+}
+
+bool MusicPlayer::isDirectory(const char* item) {
+    if (strchr(item, '/') != nullptr) {
+        return true;
+    }
+
+    return false;
 }
 
