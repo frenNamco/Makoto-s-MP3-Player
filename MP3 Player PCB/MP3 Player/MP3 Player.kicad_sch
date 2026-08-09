@@ -3725,6 +3725,351 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "MAX16150AUT_T:MAX16150AUT_T"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "IC"
+				(at -6.35 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MAX16150AUT_T"
+				(at 1.27 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "MAX16150AUT_T:SOT95P280X145-6N"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "nanoPower Pushbutton On/Off Controller and Battery Freshness Seal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER_NAME" "Maxim Integrated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MF" "Analog Devices"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MOUSER_PRICE-STOCK" "https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX16150AUT%2bT?qs=wnTfsH77Xs5xR8unQygqcw%3D%3D"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MOUSER_PART_NUMBER" "700-MAX16150AUT+T"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Price" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Package" "SOT-23-6 Maxim Integrated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/MAX16150AUT+T/Analog+Devices/view-part/?ref=eda"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "HEIGHT" "1.45mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/MAX16150AUT+T/Analog+Devices/view-part/?ref=snap"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MP" "MAX16150AUT+T"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=4702532&manufacturer=Analog Devices&part_name=MAX16150AUT+T&search_term=max16150"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER_PART_NUMBER" "MAX16150AUT+T"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "MAX16150AUT_T_0_0"
+				(rectangle
+					(start -10.16 -5.08)
+					(end 10.16 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -2.54 0)
+					(length 5.08)
+					(name "~{PB_IN}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -10.16 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 2.54 180)
+					(length 5.08)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -2.54 180)
+					(length 5.08)
+					(name "~{INT}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 0 180)
+					(length 5.08)
+					(name "~{CLR}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_RaspberryPi:RP2040"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -6029,6 +6374,573 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "TPS63020DSJT:TPS63020DSJT"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -12.7 19.05 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "TPS63020DSJT"
+				(at -12.7 -21.59 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "TPS63020DSJT:IC_TPS63020DSJT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "High Efficiency Single Inductor Buck-Boost Converter with 4A Switch 14-VSON -40 to 85"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MFANUFACTURER" "Texas Instruments"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MF" "Texas Instruments"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MOUSER-PURCHASE-URL" "https://snapeda.com/shop?store=Mouser&id=296571"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "TEXAS_INSTRUMENTS-PURCHASE-URL" "https://snapeda.com/shop?store=Texas+Instruments&id=296571"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "PACKAGE" "VSON-14 Texas Instruments"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Price" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "PRICE" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Package" "VSON-14 Texas Instruments"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/TPS63020DSJT/Texas+Instruments/view-part/?ref=eda"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "PARTREV" "I"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/TPS63020DSJT/Texas+Instruments/view-part/?ref=snap"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MP" "TPS63020DSJT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "DIGIKEY-PURCHASE-URL" "https://snapeda.com/shop?store=DigiKey&id=296571"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=225125&manufacturer=Texas Instruments&part_name=TPS63020DSJT&search_term=tps63020"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "1.00mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "AVAILABILITY" "Good"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "TPS63020DSJT_0_0"
+				(rectangle
+					(start -12.7 -20.32)
+					(end 12.7 17.78)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -17.78 7.62 0)
+					(length 5.08)
+					(name "VINA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 17.78 -17.78 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 7.62 180)
+					(length 5.08)
+					(name "FB"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 15.24 180)
+					(length 5.08)
+					(name "VOUT_4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 12.7 180)
+					(length 5.08)
+					(name "VOUT_5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 -7.62 180)
+					(length 5.08)
+					(name "L2_6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 -10.16 180)
+					(length 5.08)
+					(name "L2_7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 -2.54 180)
+					(length 5.08)
+					(name "L1_8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 -5.08 180)
+					(length 5.08)
+					(name "L1_9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 15.24 0)
+					(length 5.08)
+					(name "VIN_10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 12.7 0)
+					(length 5.08)
+					(name "VIN_11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 2.54 0)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 0 0)
+					(length 5.08)
+					(name "PS/SYNC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 2.54 180)
+					(length 5.08)
+					(name "PG"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 17.78 -15.24 180)
+					(length 5.08)
+					(name "PGND"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+1V1"
 			(power global)
 			(pin_numbers
@@ -6854,9 +7766,9 @@
 		)
 		(uuid "ac2f4f41-cef5-462b-b9ed-143464e7dd73")
 	)
-	(text "Charger IC"
+	(text "Battery Charger"
 		(exclude_from_sim no)
-		(at 421.64 183.388 0)
+		(at 429.514 183.134 0)
 		(effects
 			(font
 				(size 5.08 5.08)
@@ -7069,7 +7981,7 @@
 		(uuid "457900c2-f05f-40a2-b9ee-f21d57b21bb0")
 	)
 	(junction
-		(at 443.23 124.46)
+		(at 426.72 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "48420bd1-e403-4d37-a003-ff96a7d92984")
@@ -7285,6 +8197,12 @@
 		(uuid "b014d4e4-e365-40e1-8d01-313c9246f735")
 	)
 	(junction
+		(at 410.21 212.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b32d7552-f014-41d4-ae69-935054f6b6f9")
+	)
+	(junction
 		(at 500.38 127)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7386,6 +8304,10 @@
 		(color 0 0 0 0)
 		(uuid "f81baa66-ae24-4b50-8c87-ec89294ea50a")
 	)
+	(no_connect
+		(at 487.68 132.08)
+		(uuid "44cbd11a-7510-45c7-9278-8bb830fb287e")
+	)
 	(wire
 		(pts
 			(xy 107.95 90.17) (xy 120.65 90.17)
@@ -7445,6 +8367,16 @@
 			(type default)
 		)
 		(uuid "049c48fd-a354-43ab-97bc-d7644e639640")
+	)
+	(wire
+		(pts
+			(xy 427.99 217.17) (xy 427.99 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04c5fe24-7082-4af7-a491-ead20c924f6f")
 	)
 	(wire
 		(pts
@@ -7745,6 +8677,16 @@
 			(type default)
 		)
 		(uuid "11a42a3b-01d8-40c5-9bb5-747da46a74d1")
+	)
+	(wire
+		(pts
+			(xy 445.77 224.79) (xy 445.77 227.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11c9ca3a-d4e6-4eed-9f3a-12c343a98842")
 	)
 	(wire
 		(pts
@@ -8268,6 +9210,26 @@
 	)
 	(wire
 		(pts
+			(xy 410.21 212.09) (xy 410.21 214.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31cc9a40-3d6a-4019-96a8-288861129ec6")
+	)
+	(wire
+		(pts
+			(xy 403.86 212.09) (xy 410.21 212.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3290bee5-da1d-4588-924f-d3c5f67d39e7")
+	)
+	(wire
+		(pts
 			(xy 105.41 96.52) (xy 109.22 96.52)
 		)
 		(stroke
@@ -8328,16 +9290,6 @@
 	)
 	(wire
 		(pts
-			(xy 455.93 134.62) (xy 457.2 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35d8b49a-633d-4317-9766-15cdee478565")
-	)
-	(wire
-		(pts
 			(xy 135.89 49.53) (xy 115.57 49.53)
 		)
 		(stroke
@@ -8378,6 +9330,16 @@
 	)
 	(wire
 		(pts
+			(xy 410.21 222.25) (xy 410.21 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "383842ee-0b29-4322-83fb-bccc8b49fbc8")
+	)
+	(wire
+		(pts
 			(xy 187.96 290.83) (xy 187.96 289.56)
 		)
 		(stroke
@@ -8398,7 +9360,7 @@
 	)
 	(wire
 		(pts
-			(xy 443.23 124.46) (xy 443.23 127)
+			(xy 426.72 124.46) (xy 426.72 127)
 		)
 		(stroke
 			(width 0)
@@ -8565,6 +9527,16 @@
 			(type default)
 		)
 		(uuid "49429949-60d8-4b97-94f4-0a1ebac6d8d2")
+	)
+	(wire
+		(pts
+			(xy 440.69 134.62) (xy 457.2 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49d339c3-3df7-478f-a303-99a525083bac")
 	)
 	(polyline
 		(pts
@@ -8868,6 +9840,16 @@
 	)
 	(wire
 		(pts
+			(xy 410.21 212.09) (xy 430.53 212.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ab52958-793c-4604-ad90-20184146ec1e")
+	)
+	(wire
+		(pts
 			(xy 113.03 41.91) (xy 124.46 41.91)
 		)
 		(stroke
@@ -9028,6 +10010,16 @@
 	)
 	(wire
 		(pts
+			(xy 449.58 132.08) (xy 457.2 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63bfc888-1b24-4cf5-bd9e-0c1cca78221e")
+	)
+	(wire
+		(pts
 			(xy 115.57 58.42) (xy 115.57 59.69)
 		)
 		(stroke
@@ -9118,7 +10110,7 @@
 	)
 	(wire
 		(pts
-			(xy 443.23 134.62) (xy 443.23 137.16)
+			(xy 426.72 134.62) (xy 426.72 137.16)
 		)
 		(stroke
 			(width 0)
@@ -9528,7 +10520,7 @@
 	)
 	(wire
 		(pts
-			(xy 433.07 124.46) (xy 443.23 124.46)
+			(xy 416.56 124.46) (xy 426.72 124.46)
 		)
 		(stroke
 			(width 0)
@@ -9585,6 +10577,16 @@
 			(type default)
 		)
 		(uuid "8c68ce60-3978-4934-9075-46b2cf0abf30")
+	)
+	(wire
+		(pts
+			(xy 440.69 121.92) (xy 440.69 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cc098bf-270f-4da0-a413-6948fee01b25")
 	)
 	(wire
 		(pts
@@ -9645,6 +10647,16 @@
 			(type default)
 		)
 		(uuid "8f30b09a-bd85-47af-b11b-110f34e2c899")
+	)
+	(wire
+		(pts
+			(xy 440.69 111.76) (xy 440.69 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f968bd3-b6d2-4cca-92fe-ac8e273c451f")
 	)
 	(wire
 		(pts
@@ -10118,7 +11130,7 @@
 	)
 	(wire
 		(pts
-			(xy 443.23 124.46) (xy 457.2 124.46)
+			(xy 426.72 124.46) (xy 457.2 124.46)
 		)
 		(stroke
 			(width 0)
@@ -10265,6 +11277,16 @@
 			(type default)
 		)
 		(uuid "b6f7e349-4134-41f4-bc4f-7fdcd38fdc82")
+	)
+	(polyline
+		(pts
+			(xy 394.97 191.135) (xy 582.295 191.135)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8fd4935-6f8f-4ad8-8b73-536d6fdc31ad")
 	)
 	(wire
 		(pts
@@ -10618,16 +11640,6 @@
 	)
 	(wire
 		(pts
-			(xy 455.93 132.08) (xy 457.2 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0a1b7e8-36db-4923-9fe1-c8b262d12800")
-	)
-	(wire
-		(pts
 			(xy 325.12 52.07) (xy 344.17 52.07)
 		)
 		(stroke
@@ -10645,6 +11657,16 @@
 			(type default)
 		)
 		(uuid "d0ed766c-d169-4ecb-9159-91bece38af48")
+	)
+	(wire
+		(pts
+			(xy 430.53 217.17) (xy 427.99 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d237abc4-b832-4d5e-8786-9814a807c2c9")
 	)
 	(wire
 		(pts
@@ -10735,6 +11757,16 @@
 			(type default)
 		)
 		(uuid "d6fbf0db-85eb-4e1f-b21e-7ad9ff58ef5f")
+	)
+	(wire
+		(pts
+			(xy 449.58 111.76) (xy 449.58 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d794dc5c-9967-44c3-b11b-5248fbfaf27e")
 	)
 	(wire
 		(pts
@@ -11238,6 +12270,16 @@
 	)
 	(wire
 		(pts
+			(xy 449.58 121.92) (xy 449.58 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f602442f-1b8b-4947-9527-5029ec3d853a")
+	)
+	(wire
+		(pts
 			(xy 351.79 280.67) (xy 351.79 283.21)
 		)
 		(stroke
@@ -11275,6 +12317,16 @@
 			(type default)
 		)
 		(uuid "f9ea8570-028e-4181-935b-7410f1c5af70")
+	)
+	(wire
+		(pts
+			(xy 461.01 212.09) (xy 466.09 212.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa0d7f46-483e-4d5c-ad17-75ac28c2db6b")
 	)
 	(wire
 		(pts
@@ -11425,6 +12477,16 @@
 			(justify left bottom)
 		)
 		(uuid "05a4e541-161e-4b0b-9835-2098cc114425")
+	)
+	(label "VSYS"
+		(at 403.86 212.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0a341243-206a-473c-8103-fbfb6989ec95")
 	)
 	(label "RIGHT"
 		(at 140.97 234.95 0)
@@ -11817,7 +12879,7 @@
 		(uuid "8bedcdc6-dcb3-4cf8-81f9-591753c4b215")
 	)
 	(label "VBUS"
-		(at 433.07 124.46 180)
+		(at 416.56 124.46 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12145,6 +13207,16 @@
 			(justify right bottom)
 		)
 		(uuid "d2873584-c4eb-4d8f-99d0-1ea7816f6185")
+	)
+	(label "EN"
+		(at 466.09 212.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d47ab474-385a-4c0a-b93a-a86ea03a2acf")
 	)
 	(label "LEFT"
 		(at 123.19 234.95 0)
@@ -12731,6 +13803,88 @@
 			(project "MP3 Player"
 				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
 					(reference "#PWR060")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 427.99 224.79 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "096679c8-982c-41d6-bb50-fa47e08e9986")
+		(property "Reference" "SW3"
+			(at 429.26 223.5199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 429.26 226.0599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 422.91 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 422.91 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 427.99 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d04ea4cc-1063-4356-8db1-f8a7dca85485")
+		)
+		(pin "2"
+			(uuid "8d91cb0f-04cd-4fb3-9229-92e72b8606b4")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -13669,6 +14823,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 449.58 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "115db7d9-e2ac-4f92-992a-01791a0796be")
+		(property "Reference" "#PWR074"
+			(at 449.58 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 449.58 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 449.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 449.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 449.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b6102851-bd66-44e4-9c9c-82fbe17c658a")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "#PWR074")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 314.96 52.07 90)
 		(unit 1)
@@ -13931,7 +15163,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1u"
 			(at 504.19 132.0799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14225,6 +15457,343 @@
 		)
 	)
 	(symbol
+		(lib_id "TPS63020DSJT:TPS63020DSJT")
+		(at 519.43 224.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1c1eb12a-7d26-4fe6-a6b5-8dada76366b2")
+		(property "Reference" "U7"
+			(at 519.43 201.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TPS63020DSJT"
+			(at 519.43 204.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TPS63020DSJT:IC_TPS63020DSJT"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "High Efficiency Single Inductor Buck-Boost Converter with 4A Switch 14-VSON -40 to 85"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MFANUFACTURER" "Texas Instruments"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MF" "Texas Instruments"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MOUSER-PURCHASE-URL" "https://snapeda.com/shop?store=Mouser&id=296571"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "TEXAS_INSTRUMENTS-PURCHASE-URL" "https://snapeda.com/shop?store=Texas+Instruments&id=296571"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "PACKAGE" "VSON-14 Texas Instruments"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Price" "None"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "PRICE" "None"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Package" "VSON-14 Texas Instruments"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/TPS63020DSJT/Texas+Instruments/view-part/?ref=eda"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "PARTREV" "I"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/TPS63020DSJT/Texas+Instruments/view-part/?ref=snap"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MP" "TPS63020DSJT"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "DIGIKEY-PURCHASE-URL" "https://snapeda.com/shop?store=DigiKey&id=296571"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=225125&manufacturer=Texas Instruments&part_name=TPS63020DSJT&search_term=tps63020"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "1.00mm"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "AVAILABILITY" "Good"
+			(at 519.43 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "1"
+			(uuid "cadd0182-28e8-4220-8838-d384a70a6250")
+		)
+		(pin "7"
+			(uuid "3ae254d6-7715-42ef-861f-535101ef612a")
+		)
+		(pin "13"
+			(uuid "2a2bbb26-d306-43c1-b518-365178600bca")
+		)
+		(pin "10"
+			(uuid "451e1926-e20d-44c0-8295-fc1bf9af65cf")
+		)
+		(pin "2"
+			(uuid "be36a677-3400-46d0-8192-1951c145337c")
+		)
+		(pin "3"
+			(uuid "f4b04a75-4f75-416f-97c2-ac6e3ab8362f")
+		)
+		(pin "4"
+			(uuid "0adfd32a-896e-4dbf-b43e-d46143d8337e")
+		)
+		(pin "5"
+			(uuid "331d7f31-0ea6-41bb-98f8-50be7a9974b1")
+		)
+		(pin "6"
+			(uuid "be88781a-9fc4-4b6f-9088-c82261678104")
+		)
+		(pin "11"
+			(uuid "3252a280-2428-4187-afec-6760679d7502")
+		)
+		(pin "9"
+			(uuid "41f7b9a9-7d33-4fe8-a32b-d2846c62f645")
+		)
+		(pin "15"
+			(uuid "f50bd96c-d6c0-46cb-9f66-cee5e5635491")
+		)
+		(pin "8"
+			(uuid "9df9f066-2411-45cf-8555-4039e49d3122")
+		)
+		(pin "14"
+			(uuid "77c95a3c-133e-4401-afaa-579768e24375")
+		)
+		(pin "12"
+			(uuid "ee36b05c-a8cc-446a-9339-0b7df163c25d")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "U7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 124.46 34.29 0)
 		(unit 1)
@@ -14489,7 +16058,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "10u"
 			(at 521.97 132.0799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14543,6 +16112,88 @@
 			(project "MP3 Player"
 				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
 					(reference "C43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 440.69 118.11 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "234ce4bf-09e6-493f-a6a4-60e5711cbc20")
+		(property "Reference" "R23"
+			(at 443.23 116.8399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 443.23 119.3799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 438.912 118.11 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 440.69 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 440.69 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e2338c3f-731c-415f-a00a-909904b6234a")
+		)
+		(pin "1"
+			(uuid "b5752084-57c8-4ed1-9cce-f99c6abdc9e2")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -15674,6 +17325,166 @@
 			(project "MP3 Player"
 				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
 					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 410.21 218.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3906539b-89f2-4708-b5e9-6e97e0ceb783")
+		(property "Reference" "C45"
+			(at 414.02 217.1699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 414.02 219.7099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 411.1752 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 410.21 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 410.21 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19ccbe26-b83a-4af1-ba85-c4322b8b7efb")
+		)
+		(pin "2"
+			(uuid "98bf3271-3604-4ba2-940e-0059fe560cb0")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "C45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 445.77 227.33 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3998be2a-92ad-4e58-9bb6-387e878a6907")
+		(property "Reference" "#PWR076"
+			(at 445.77 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 445.77 232.41 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 445.77 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 445.77 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 445.77 227.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa291b7d-68b7-4089-91a1-0d7ecfa61c93")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -17148,7 +18959,7 @@
 				)
 			)
 		)
-		(property "Value" "BQ25180YBGR"
+		(property "Value" "BQ25188YBGR"
 			(at 472.44 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18559,7 +20370,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 443.23 137.16 0)
+		(at 426.72 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18570,7 +20381,7 @@
 		(fields_autoplaced yes)
 		(uuid "752015aa-a87a-4a7a-b292-934343ea49e8")
 		(property "Reference" "#PWR070"
-			(at 443.23 143.51 0)
+			(at 426.72 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18581,7 +20392,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 443.23 142.24 0)
+			(at 426.72 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18591,7 +20402,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 443.23 137.16 0)
+			(at 426.72 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18602,7 +20413,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 443.23 137.16 0)
+			(at 426.72 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18613,7 +20424,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 443.23 137.16 0)
+			(at 426.72 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19983,6 +21794,256 @@
 		)
 	)
 	(symbol
+		(lib_id "MAX16150AUT_T:MAX16150AUT_T")
+		(at 445.77 214.63 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b1e152e-dd76-481f-900b-4a121f94f738")
+		(property "Reference" "IC1"
+			(at 445.77 204.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MAX16150AUT_T"
+			(at 445.77 207.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MAX16150AUT_T:SOT95P280X145-6N"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "nanoPower Pushbutton On/Off Controller and Battery Freshness Seal"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER_NAME" "Maxim Integrated"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MF" "Analog Devices"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MOUSER_PRICE-STOCK" "https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX16150AUT%2bT?qs=wnTfsH77Xs5xR8unQygqcw%3D%3D"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MOUSER_PART_NUMBER" "700-MAX16150AUT+T"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Price" "None"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Package" "SOT-23-6 Maxim Integrated"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/MAX16150AUT+T/Analog+Devices/view-part/?ref=eda"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "HEIGHT" "1.45mm"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/MAX16150AUT+T/Analog+Devices/view-part/?ref=snap"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MP" "MAX16150AUT+T"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=4702532&manufacturer=Analog Devices&part_name=MAX16150AUT+T&search_term=max16150"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" "MAX16150AUT+T"
+			(at 445.77 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "4"
+			(uuid "e9c99206-14b6-4cb7-a1d6-03634643feed")
+		)
+		(pin "5"
+			(uuid "e84e0100-3048-47f0-bb6f-cfc6f41d349b")
+		)
+		(pin "1"
+			(uuid "164daf8a-f1f0-4400-8bbe-29449f0e6f26")
+		)
+		(pin "3"
+			(uuid "4ebf769a-e9da-4ad1-8c7b-9e5fda3e8ab9")
+		)
+		(pin "6"
+			(uuid "30a28806-f24f-498a-b823-f62bb28d988f")
+		)
+		(pin "2"
+			(uuid "fbcfaa91-e3c1-4384-a379-c216b2e9483f")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "IC1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 163.83 34.29 0)
 		(unit 1)
@@ -20059,6 +22120,88 @@
 			(project "MP3 Player"
 				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 449.58 118.11 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8db5ff75-a1f4-472d-9065-4d0bb245468c")
+		(property "Reference" "R22"
+			(at 452.12 116.8399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 452.12 119.3799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 447.802 118.11 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 449.58 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 449.58 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6dc469f3-fefe-47f7-b86a-b195e18b594e")
+		)
+		(pin "2"
+			(uuid "78ab59e0-c744-4b2a-9cbf-e3b73d3aad86")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -21726,6 +23869,162 @@
 			(project "MP3 Player"
 				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
 					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 440.69 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b146d9aa-446c-4d77-8109-49cd1fed5e5c")
+		(property "Reference" "#PWR075"
+			(at 440.69 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 440.69 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 440.69 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 440.69 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 440.69 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "497a7ad1-8a9d-4a5c-a464-260e0eb9bd77")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "#PWR075")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 410.21 226.06 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b3273331-1b74-4262-a66a-b86777c0a5d8")
+		(property "Reference" "#PWR077"
+			(at 410.21 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 410.21 231.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 410.21 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 410.21 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 410.21 226.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "898c798b-2a6e-43f2-85f6-0e7b80ac5876")
+		)
+		(instances
+			(project "MP3 Player"
+				(path "/c7fee4c7-4b78-4a28-af58-87f4dbf0d541"
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -23608,7 +25907,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 443.23 130.81 0)
+		(at 426.72 130.81 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23619,7 +25918,7 @@
 		(fields_autoplaced yes)
 		(uuid "e0a960f6-ad96-40b9-a15f-960316df8fdb")
 		(property "Reference" "C42"
-			(at 447.04 129.5399 0)
+			(at 430.53 129.5399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23630,7 +25929,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 447.04 132.0799 0)
+			(at 430.53 132.0799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23641,7 +25940,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 444.1952 134.62 0)
+			(at 427.6852 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23652,7 +25951,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 443.23 130.81 0)
+			(at 426.72 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23663,7 +25962,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 443.23 130.81 0)
+			(at 426.72 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
