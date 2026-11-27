@@ -1,0 +1,12 @@
+"MP3 Player Codebase/.vscode"
+"MP3 Player Codebase/.pio"
+
+*.zip
+*.bak
+*.kicad_prl
+*-bak
+*.bck
+fp-info-cache
+
+/plots/
+/gerbers/
